@@ -28,8 +28,10 @@ namespace Lab5
                 while (i <= int.MaxValue)
                 {
                     Console.WriteLine("How many sides should each die have? (up to 20)");
-                    int sides = int.Parse(Console.ReadLine());
-                    if (sides > 20 || sides <= 1)
+
+                    int sides;
+                    bool Validate = int.TryParse(Console.ReadLine(), out sides);
+                    if (Validate == false || sides > 20 || sides <= 1)
                     {
                         Console.WriteLine("Try entering a number between 1 and 20!");
                         continue;
@@ -45,7 +47,7 @@ namespace Lab5
                         Console.WriteLine($"Roll {i}: Boxcars!!!");
 
                     else
-                        Console.WriteLine($"Roll {y}: {DiceRollerApp.RollDice(sides)}");
+                        Console.WriteLine($"Roll {i}: {DiceRollerApp.RollDice(sides)}");
 
                     Console.WriteLine("Wanna play again? (y/n)");
                     string yesOrNo = Console.ReadLine();
