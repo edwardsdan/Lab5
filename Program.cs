@@ -17,6 +17,9 @@ namespace Lab5
             int die2 = rnd.Next(1, x);
             return die1 + die2;
         }
+
+
+
         public static void PrintResult (int rolled, int i)
         {
             if (rolled == 2)
@@ -32,6 +35,9 @@ namespace Lab5
                 WriteLine($"Roll {i}: {rolled}");
         }
     }
+
+
+
     class Program
     {
         public static int Validate(string x)
@@ -45,6 +51,8 @@ namespace Lab5
             }
             return sides;
         }
+
+
 
         static void Main(string[] args)
         {
